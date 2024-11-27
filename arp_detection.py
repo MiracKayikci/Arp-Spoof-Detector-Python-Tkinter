@@ -14,19 +14,16 @@ def arp_spoof_detect(packet, info_textbox, root_destroyed):
         if arp_response:
             if arp_response.hwsrc != arp_reply_src_mac:
                 spoof_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-
-                # Check if attack is already logged
+                
                 data = get_data_from_database()
                 for row in data:
                     if row[0] == spoof_time and row[1] == arp_reply_src_ip and row[2] == arp_response.hwsrc:
                         break
                 else:
-                    # Log new attack and update UI
                     add_to_database(spoof_time, arp_reply_src_ip, arp_response.hwsrc)
                     if not root_destroyed:
                         update_info_textbox(info_textbox)
 
-                    # Display attack details in the main window
                     info_text = f"\n---------------------------------------------------------\nTarih: {spoof_time} | IP: {arp_reply_src_ip} | Değişen MAC: {arp_response.hwsrc}\n---------------------------------------------------------\n"
                     info_textbox.config(state="normal")
                     info_textbox.insert("end", info_text)
