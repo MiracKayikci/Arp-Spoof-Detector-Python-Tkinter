@@ -1,4 +1,4 @@
-# ARP Spoof Detection System  
+# ARP Spoof Detection
 
 A Python-based application to detect ARP spoofing attacks in real-time, featuring a user-friendly GUI and SQLite database logging for tracking attack history.
 
