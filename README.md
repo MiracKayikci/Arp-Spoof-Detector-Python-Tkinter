@@ -30,8 +30,7 @@ pip install scapy
 
 ### Clone the Repository:  
 ```bash
-git clone <REPO_URL>
-cd <REPO_NAME>
+git clone https://github.com/MiracKayikci/Arp-Spoof-Detector-Python-Tkinter.git
 ```
 ### How to Use:  
 - **Start Monitoring:** Click **"Start Monitoring"** to initiate ARP spoof detection.  
